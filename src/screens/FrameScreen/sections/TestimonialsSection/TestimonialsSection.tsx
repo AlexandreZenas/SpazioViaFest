@@ -44,9 +44,9 @@ export const TestimonialsSection = (): JSX.Element => {
         </NavigationMenu>
 
         {/* Logo */}
-        <div className="flex flex-col h-auto lg:h-[81px] items-center justify-center gap-4 ">
+        <div className=" flex flex-col h-auto lg:h-[81px] items-center justify-center gap-4 ">
           <a href="/#Hero" >
-            <img src="icons/LogoWhite.svg" alt="" />
+            <img className="" src="icons/LogoWhite.svg" alt="" />
           </a>
 
         </div>

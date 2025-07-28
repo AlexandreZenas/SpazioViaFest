@@ -1,8 +1,13 @@
 import React from "react";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { Separator } from "../../../../components/ui/separator";
+import Slider from "react-slick";
 
 export const ServicesOverviewSection = (): JSX.Element => {
+
+
   // Data for amenities/services
   const amenities = [
     {
@@ -50,7 +55,7 @@ export const ServicesOverviewSection = (): JSX.Element => {
       icon: "icons/no-accepts/warning.svg",
       description: "Não oferecemos serviços, somente o aluguel do espaço",
       iconClass:
-        "relative w-7 h-7 -top-px -left-px bg-[url(/vector-11.svg)] bg-[100%_100%]"
+        "relative w-7 h-7 -top-px -left-px bg-[url(/vector-11.svg)] bg-[100%_100%]",
     },
     {
       icon: "icons/no-accepts/hour.svg",
@@ -60,10 +65,50 @@ export const ServicesOverviewSection = (): JSX.Element => {
     },
   ];
 
+    const settings = {
+        dots: true,             // Exibir pontos indicadores
+        infinite: true,         // Carrossel infinito
+        speed: 500,              // Velocidade da animação (ms)
+        slidesToShow: 1 ,        // Número de divs visíveis de uma vez
+        slidesToScroll: 1,      // Número de divs a serem roladas
+        initialSlide: 0,        // Slide inicial
+        autoplay: true,         // Avançar automaticamente
+        autoplaySpeed: 3500,    // Intervalo entre avanços automáticos (ms)
+        cssEase: "linear",  
+        responsive: [
+            {
+              breakpoint: 992,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true
+              }
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                initialSlide: 1
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            }
+          ]    
+      };
   return (
-    <section id="OurSpace" className=" 2xl:max-w-[1440px] xl:max-w-[1280px] flex flex-col w-full items-center gap-4 md:gap-2 pt-8 md:pt-16 pb-16 md:pb-32 px-4 relative ">
-      <div className="flex flex-col xl:flex-row items-start gap-12 lg:gap-12 relative w-full">
-        <Card className="xl:w-1/2  w-full  border-none shadow-none">
+    <section
+      id="OurSpace"
+      className=" 2xl:max-w-[1440px] xl:max-w-[1280px] flex flex-col w-full items-center gap-4 md:gap-2 pt-8 md:pt-16 pb-16 md:pb-32  relative "
+    >
+      <div className="px-4 flex flex-col xl:flex-row gap-12 lg:gap-12 w-full lg:items-stretch">
+        <Card className="xl:w-1/2  w-full flex-1  border-none shadow-none">
           <CardContent className="p-0 gap-6 flex flex-col items-start w-full">
             <h2 className="relative self-stretch mt-[-1.00px] font-main-title font-[number:var(--main-title-font-weight)] text-primary-color text-[28px] md:text-[length:var(--main-title-font-size)] text-center tracking-[var(--main-title-letter-spacing)] leading-[32px] md:leading-[var(--main-title-line-height)] [font-style:var(--main-title-font-style)]">
               Conheça o nosso espaço
@@ -106,13 +151,22 @@ export const ServicesOverviewSection = (): JSX.Element => {
           </CardContent>
         </Card>
 
-        <Card className="xl:w-1/2  w-full flex flex-col border-none shadow-none h-full">
-          <CardContent className="w-full p-0 flex flex-col items-center justify-between relative h-full gap-6">
-            <img
-              className="relative flex-[0_0_auto] xl:w-full w-4/5 h-auto "
-              alt="Frame"
-              src="images/our-space/Frame.png"
-            />
+        <Card className="xl:w-1/2  w-full flex flex-1 flex-col border-none shadow-none justify-between h-auto items-stretch">
+          <CardContent className="w-full p-0 flex flex-col items-center justify-center relative h-full gap-6 ">
+            <Slider className='w-[95%] text-center' {...settings}>
+            <div className=''>
+                <img className="w-full h-full object-cover" src={'images/our-space/churrasqueira.jpeg'} alt='alo'/>
+            </div>
+            <div className=''>
+                <img className="w-full h-full object-cover" src={'images/our-space/piscina.jpeg'} alt='alo'/>
+            </div>
+            <div className=''>
+                <img className="w-full h-full object-cover" src={'images/our-space/Frame.png'} alt='alo'/>
+            </div>
+            <div className=''>
+               <img className="w-full h-full object-cover" src={'images/our-space/intern.jpeg'} alt='alo'/>
+            </div>
+        </Slider>
 
             <div className="flex flex-col md:flex-row md:flex-wrap items-start justify-center gap-4 md:gap-[10px_32px] px-0 py-2.5 relative self-stretch w-full overflow-hidden">
               {rules.map((rule, index) => (
