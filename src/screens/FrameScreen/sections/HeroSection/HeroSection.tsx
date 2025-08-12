@@ -29,16 +29,16 @@ export const HeroSection = (): JSX.Element => {
   // FAQ data for the right column
   const rightFaqItems = [
     {
-      question: "Onde fica o Espaço Amanda Eventos?",
-      answer: "O Espaço Amanda Eventos está localizado no coração da cidade, próximo a pontos turísticos e com fácil acesso.",
+      question: "Onde fica o Spazio Via Fest?",
+      answer: "O Spazio Via Fest está localizado na Av. Coelho da Rocha, 2964 - Banco de Areia, Mesquita - RJ, 26572-481.",
     },
     {
       question: "Qual a capacidade da casa?",
-      answer: "A casa tem capacidade para até 150 pessoas confortavelmente.",
+      answer: "A casa tem capacidade para até 80 pessoas na área interna e 40 na área externa.",
     },
     {
-      question: "Em qual dia da semana posso fazer a minha festa?",
-      answer: "As festas podem ser agendadas de segunda a domingo, dependendo da disponibilidade do espaço.",
+      question: "Vocês alugam brinquedos?",
+      answer: "Não, não alugamos brinquedos, mas o espaço é amplo e permite a instalação de brinquedos de terceiros.",
     }
   ];
 
